@@ -1,0 +1,113 @@
+//PUT _template/twitter_profile_dev_template
+{
+    "version": 1,
+    "index_patterns": ["twitter_profile_dev_*"],
+    "settings": {
+        "number_of_shards": 2,
+        "number_of_replicas": 1,
+        "index": {
+            "lifecycle": {
+                "name": "twentygb_rollover",
+                "rollover_alias": "twitter_profile_dev_rollover"
+            }
+        }
+    },
+    "mappings": {
+        "properties": {
+            "screen_name": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "profile_name": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "user_id": {
+                "type": "keyword"
+            },
+            "locations": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                } 
+            },
+            "profile_urls": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "profile_desc": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "follower_count": {
+                "type": "integer"
+            },
+            "friend_count": {
+                "type": "integer"
+            },
+            "listed_count": {
+                "type": "integer"
+            },
+            "favorites_count": {
+                "type": "integer"
+            },
+            "statuses_count": {
+                "type": "integer"
+            },
+            "verified": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "account_created_date": {
+                "type": "date",
+                "format": "EEE MMM dd HH:mm:ss Z yyyy"
+            },
+            "utc_offset": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "time_zone": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "geoenabled": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            }
+        }
+    }
+}

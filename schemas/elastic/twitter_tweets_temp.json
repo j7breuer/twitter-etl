@@ -1,0 +1,165 @@
+//PUT _template/twitter_tweets_dev_template
+{
+    "index_patterns": ["twitter_tweets_dev_*"],
+    "settings": {
+        "number_of_shards": 2,
+        "number_of_replicas": 1,
+        "index": {
+            "lifecycle": {
+                "name": "twentygb_rollover",
+                "rollover_alias": "twitter_tweets_dev_rollover"
+            }
+        }
+    },
+    "mappings": {
+        "properties": {
+            "text": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "tweet_id": {
+                "type": "keyword"
+            },
+            "tweet_creator_id": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "tweet_source": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "coordinates": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "hashtags": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "urls": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "user_mentions": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "retweet_id": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "possibly_sensitive": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "tweet_place_id": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "tweet_place_url": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "tweet_place_type": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "tweet_place_short_name": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "tweet_place_long_name": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "tweet_place_country": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "tweet_place_country_code": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "tweet_creation_date_time": {
+                "type": "date",
+                "format": "EEE MMM dd HH:mm:ss Z yyyy"
+            },
+            "quote_count": {
+                "type": "integer"
+            },
+            "reply_count": {
+                "type": "integer"
+            },
+            "retweet_count": {
+                "type": "integer"
+            },
+            "favorite_count": {
+                "type": "integer"
+            }
+        }
+    }
+}

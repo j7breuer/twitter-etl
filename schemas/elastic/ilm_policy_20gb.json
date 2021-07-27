@@ -1,0 +1,18 @@
+//PUT _ilm/policy/twentygb_rollover
+{
+    "policy" : {
+        "phases" : {
+            "hot" : {
+                "min_age" : "0ms",
+                "actions" : {
+                    "rollover" : {
+                       "max_size" : "20gb"
+                    },
+                    "set_priority" : {
+                        "priority" : 100
+                    }
+                }
+            }
+        }
+    }
+}
