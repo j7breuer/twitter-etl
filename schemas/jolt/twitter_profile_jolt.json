@@ -1,0 +1,20 @@
+{
+    "operation": "modify-overwrite-beta",
+    "spec": {
+        "user_id": "=toString",
+        "screen_name": "=toString",
+        "locations": "=toString",
+        "profile_urls": "=toString",
+        "profile_desc": "=toString",
+        "follower_count": "=toInteger",
+        "friend_count": "=toInteger",
+        "listed_count": "=toInteger",
+        "favorites_count": "=toInteger",
+        "statuses_count": "=toInteger",
+        "verified": "=toBoolean",
+        "account_created_date": "=toString",
+        "utc_offset": "=toString",
+        "time_zone": "=toString",
+        "geoenabled": "=toString"
+    }
+}
