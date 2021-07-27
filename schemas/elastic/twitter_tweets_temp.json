@@ -1,7 +1,7 @@
 //PUT _template/twitter_tweets_dev_template
 {
     "version": 1,
-    "index_patterns": ["twitter_tweets_dev_*"],
+    "index_patterns": ["twitter_tweets_dev*"],
     "settings": {
         "number_of_shards": 2,
         "number_of_replicas": 1,
