@@ -1,15 +1,16 @@
 //PUT _template/twitter_tweets_dev_template
 {
-    "version": 1,
+    "version": 2,
     "index_patterns": ["twitter_tweets_dev*"],
     "settings": {
         "number_of_shards": 2,
-        "number_of_replicas": 1,
+        "number_of_replicas": 0,
         "index": {
             "lifecycle": {
                 "name": "twentygb_rollover",
                 "rollover_alias": "twitter_tweets_dev_rollover"
-            }
+            },
+            "refresh_interval": "45s"
         }
     },
     "mappings": {
