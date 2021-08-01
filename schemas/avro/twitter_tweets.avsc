@@ -1,0 +1,170 @@
+{
+    "namespace": "Twitter_Tweets",
+    "type": "record",
+    "name": "twitter_tweets_schema",
+    "fields": [
+        {
+            "name": "text",
+            "type": ["null", "string"],
+            "default": "",
+            "aliases": [],
+            "doc": "Full text of tweet"
+        },
+        {
+            "name": "tweet_creator_id",
+            "type": ["null", "string"],
+            "default": "",
+            "aliases": [],
+            "doc": "User ID of account that created tweet"
+        },
+        {
+            "name": "tweet_id",
+            "type": ["null", "string"],
+            "default": "",
+            "aliases": [],
+            "doc": "UUID of tweet"
+        },
+        {
+            "name": "tweet_source",
+            "type": ["null", "string"],
+            "default": "",
+            "aliases": [],
+            "doc": "Link to tweet"
+        },
+        {
+            "name": "tweet_creation_date_time",
+            "type": ["null", "string"],
+            "default": "",
+            "aliases": [],
+            "doc": "Time that tweet was created"
+        },
+        {
+            "name": "coordinates",
+            "type": ["null", "string"],
+            "default": "",
+            "aliases": [],
+            "doc": "Coordinates of tweet"
+        },
+        {
+            "name": "hashtags",
+            "type": {
+                "type": "array",
+                "items": "string"
+            },
+            "default": [],
+            "aliases": ["extr_hashtags"],
+            "doc": "List of all hashtags"
+        },
+        {
+            "name": "urls",
+            "type": {
+                "type": "array",
+                "items": "string"
+            },
+            "default": [],
+            "aliases": ["extr_urls"],
+            "doc": "List of all URLs referenced in tweets"
+        },
+        {
+            "name": "user_mentions",
+            "type": {
+                "type": "array",
+                "items": "string"
+            },
+            "default": [],
+            "aliases": ["extr_user_mentions"],
+            "doc": "List of all user mentions by user id"
+        },
+        {
+            "name": "quote_count",
+            "type": ["null", "string"],
+            "default": "",
+            "aliases": [],
+            "doc": "Count of tweets that quoted this tweet"
+        },
+        {
+            "name": "reply_count",
+            "type": ["null", "string"],
+            "default": "",
+            "aliases": [],
+            "doc": "Count of replies to this tweet"
+        },
+        {
+            "name": "retweet_count",
+            "type": ["null", "string"],
+            "default": "",
+            "aliases": [],
+            "doc": "Count of retweets of this tweet"
+        },
+        {
+            "name": "retweet_id",
+            "type": ["null", "string"],
+            "default": "",
+            "aliases": [],
+            "doc": "ID of tweet that was retweeted/quoted"
+        },
+        {
+            "name": "favorite_count",
+            "type": ["null", "string"],
+            "default": "",
+            "aliases": [],
+            "doc": "Count of favorites of this tweet"
+        },
+        {
+            "name": "possibly_sensitive",
+            "type": ["null", "string"],
+            "default": "",
+            "aliases": [],
+            "doc": "Potentially sensitive (e.g. adult content) tweet"
+        },
+        {
+            "name": "tweet_place_id",
+            "type": ["null", "string"],
+            "default": "",
+            "aliases": [],
+            "doc": "Id of location tweet was made at"
+        },
+        {
+            "name": "tweet_place_url",
+            "type": ["null", "string"],
+            "default": "",
+            "aliases": [],
+            "doc": "URL to twitters geo location of tweet"
+        },
+        {
+            "name": "tweet_place_type",
+            "type": ["null", "string"],
+            "default": "",
+            "aliases": [],
+            "doc": "Tweet's place created (e.g. city)"
+        },
+        {
+            "name": "tweet_place_short_name",
+            "type": ["null", "string"],
+            "default": "",
+            "aliases": [],
+            "doc": "Short name of tweets location"
+        },
+        {
+            "name": "tweet_place_long_name",
+            "type": ["null", "string"],
+            "default": "",
+            "aliases": [],
+            "doc": "Long name of tweets location"
+        },
+        {
+            "name": "tweet_place_country",
+            "type": ["null", "string"],
+            "default": "",
+            "aliases": [],
+            "doc": "Name of country tweet was sent from"
+        },
+        {
+            "name": "tweet_place_country_code",
+            "type": ["null", "string"],
+            "default": "",
+            "aliases": [],
+            "doc": "Code of country tweet was sent from (e.g. USA, CA, MX)"
+        }
+    ]
+}
