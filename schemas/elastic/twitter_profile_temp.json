@@ -1,7 +1,7 @@
 PUT _template/twitter_profile_dev_template
 {
-    "version": 2,
-    "index_patterns": ["twitter_profile_dev*"],
+    "version": 3,
+    "index_patterns": ["twitter_profile_dev-*"],
     "settings": {
         "number_of_shards": 2,
         "number_of_replicas": 0,
@@ -15,7 +15,7 @@ PUT _template/twitter_profile_dev_template
     },
     "mappings": {
         "properties": {
-            "screen_name": {
+            "username": {
                 "type": "text",
                 "fields": {
                     "keyword": {
@@ -31,10 +31,10 @@ PUT _template/twitter_profile_dev_template
                     }
                 }
             },
-            "user_id": {
+            "id": {
                 "type": "keyword"
             },
-            "locations": {
+            "location": {
                 "type": "text",
                 "fields": {
                     "keyword": {
@@ -42,7 +42,7 @@ PUT _template/twitter_profile_dev_template
                     }
                 } 
             },
-            "profile_urls": {
+            "profile_url": {
                 "type": "text",
                 "fields": {
                     "keyword": {
@@ -50,7 +50,7 @@ PUT _template/twitter_profile_dev_template
                     }
                 }
             },
-            "profile_desc": {
+            "description": {
                 "type": "text",
                 "fields": {
                     "keyword": {
@@ -58,20 +58,25 @@ PUT _template/twitter_profile_dev_template
                     }
                 }
             },
-            "follower_count": {
-                "type": "integer"
-            },
-            "friend_count": {
-                "type": "integer"
-            },
-            "listed_count": {
-                "type": "integer"
-            },
-            "favorites_count": {
-                "type": "integer"
-            },
-            "statuses_count": {
-                "type": "integer"
+            "metrics": {
+                "type": "nested",
+                "properties": {
+                    "followers_count": {
+                        "type": "integer"
+                    },
+                    "friends_count": {
+                        "type": "integer"
+                    },
+                    "listed_count": {
+                        "type": "integer"
+                    },
+                    "favorites_count": {
+                        "type": "integer"
+                    },
+                    "statuses_count": {
+                        "type": "integer"
+                    }
+                }
             },
             "verified": {
                 "type": "text",
@@ -81,7 +86,7 @@ PUT _template/twitter_profile_dev_template
                     }
                 }
             },
-            "account_created_date": {
+            "created_at": {
                 "type": "date",
                 "format": "EEE MMM dd HH:mm:ss Z yyyy"
             },
@@ -101,7 +106,7 @@ PUT _template/twitter_profile_dev_template
                     }
                 }
             },
-            "geoenabled": {
+            "geo_enabled": {
                 "type": "text",
                 "fields": {
                     "keyword": {

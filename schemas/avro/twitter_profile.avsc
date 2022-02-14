@@ -1,119 +1,107 @@
 {
-    "namespace": "Twitter_Profiles",
-    "type": "record",
-    "name": "twitter_profile_schema",
-    "fields": [
-        {
-            "name": "user_id",
-            "type": ["null", "string"],
-            "default": "",
-            "aliases": ["id_str"],
-            "doc": "UUID for each profile"
-        },
-        {
-            "name": "profile_name",
-            "type": ["null", "string"],
-            "default": "",
-            "aliases": ["name"],
-            "doc": "Profile name for each profile"
-        },
-        {
-            "name": "screen_name",
-            "type": ["null", "string"],
-            "default": "",
-            "aliases": [],
-            "doc": "List of all screen names tagged to user name"
-        },
-        {
-            "name": "locations",
-            "type": ["null", "string"],
-            "default": "",
-            "aliases": ["location"],
-            "doc": "List of all locations tagged to user name"
-        },
-        {
-            "name": "profile_urls",
-            "type": ["null", "string"],
-            "default": "",
-            "aliases": ["url"],
-            "doc": "List of all urls tagged to user name"            
-        },
-        {
-            "name": "profile_desc",
-            "type": ["null", "string"],
-            "default": "",
-            "aliases": ["description"],
-            "doc": "List of all profile descriptions tagged to user name"            
-        },
-        {
-            "name": "follower_count",
-            "type": ["null", "string"],
-            "default": "",
-            "aliases": ["followers_count"],
-            "doc": "List of all follower counts for when tweets are pulled"            
-        },
-        {
-            "name": "friend_count",
-            "type": ["null", "string"],
-            "default": "",
-            "aliases": ["friends_count"],
-            "doc": "List of all friends counts for when tweets are pulled"            
-        },
-        {
+  "name": "twitter_profile",
+  "type": "record",
+  "namespace": "twitter_profile_schema",
+  "fields": [
+    {
+      "name": "id",
+      "type": [
+        "long",
+        "null"
+      ]
+    },
+    {
+      "name": "profile_name",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "username",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "location",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "profile_url",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "description",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "verified",
+      "type": "boolean"
+    },
+    {
+      "name": "created_at",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "utc_offset",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "time_zone",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "geo_enabled",
+      "type": "boolean"
+    },
+    {
+      "name": "metrics",
+      "type": {
+        "name": "metrics",
+        "type": "record",
+        "fields": [
+          {
+            "name": "followers_count",
+            "type": "int"
+          },
+          {
+            "name": "friends_count",
+            "type": "int"
+          },
+          {
             "name": "listed_count",
-            "type": ["null", "string"],
-            "default": "",
-            "aliases": [],
-            "doc": "List of all lists for when tweets are pulled"            
-        },
-        {
+            "type": "int"
+          },
+          {
             "name": "favorites_count",
-            "type": ["null", "string"],
-            "default": "",
-            "aliases": ["favourites_count"],
-            "doc": "List of all favorite counts for when tweets are pulled"            
-        },
-        {
+            "type": "int"
+          },
+          {
             "name": "statuses_count",
-            "type": ["null", "string"],
-            "default": "",
-            "aliases": [],
-            "doc": "List of all statuses counts for when tweets are pulled"            
-        },
-        {
-            "name": "verified",
-            "type": ["null", "string"],
-            "default": "",
-            "aliases": [],
-            "doc": "Status for if verified or not"
-        },
-        {
-            "name": "account_created_date",
-            "type": ["null", "string"],
-            "default": "",
-            "aliases": ["created_at"],
-            "doc": "Date for when account was created"
-        },
-        {
-            "name": "utc_offset",
-            "type": ["null", "string"],
-            "default": "",
-            "aliases": [],
-            "doc": "Offset value for time"
-        },
-        {
-            "name": "time_zone",
-            "type": ["null", "string"],
-            "default": "",
-            "aliases": [],
-            "doc": "Time zone value for time"
-        },
-        {
-            "name": "geoenabled",
-            "type": ["null", "string"],
-            "default": "",
-            "aliases": [],
-            "doc": "Bool of if geoenabled or not"
-        }
-    ]
+            "type": "int"
+          }
+        ]
+      }
+    }
+  ]
 }

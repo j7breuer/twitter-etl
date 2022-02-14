@@ -1,0 +1,28 @@
+[
+    {
+      "operation": "shift",
+      "spec": {
+        "created_at": "created_at",
+        "id": "tweet_id",
+        "lang": "language",
+        "source": "source",
+        "possibly_sensitive": "sensitive",
+        "extended_tweet": {
+            "full_text": "text",
+            "entities": {
+                "hashtags": "entities.hashtags",
+                "urls": "entities.urls",
+                "user_mentions": "entities.user_mentions",
+                "symbols": "entities.symbols"
+            }
+        },
+        "reply_count": "metrics.reply_count",
+        "retweet_count": "metrics.retweet_count",
+        "favorite_count": "metrics.favorite_count",
+        "quote_count": "metrics.quote_count",
+        "user": {
+            "id": "tweet_creator_id"
+        }
+      }
+    }
+  ]
