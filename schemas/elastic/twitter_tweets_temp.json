@@ -1,7 +1,7 @@
 PUT _template/twitter_tweets_dev_template
 {
-    "version": 2,
-    "index_patterns": ["twitter_tweets_dev*"],
+    "version": 3,
+    "index_patterns": ["twitter_tweets_dev-*"],
     "settings": {
         "number_of_shards": 2,
         "number_of_replicas": 0,
@@ -34,39 +34,7 @@ PUT _template/twitter_tweets_dev_template
                     }
                 }
             },
-            "tweet_source": {
-                "type": "text",
-                "fields": {
-                    "keyword": {
-                        "type": "keyword"
-                    }
-                }
-            },
-            "coordinates": {
-                "type": "text",
-                "fields": {
-                    "keyword": {
-                        "type": "keyword"
-                    }
-                }
-            },
-            "hashtags": {
-                "type": "text",
-                "fields": {
-                    "keyword": {
-                        "type": "keyword"
-                    }
-                }
-            },
-            "urls": {
-                "type": "text",
-                "fields": {
-                    "keyword": {
-                        "type": "keyword"
-                    }
-                }
-            },
-            "user_mentions": {
+            "source": {
                 "type": "text",
                 "fields": {
                     "keyword": {
@@ -82,85 +50,32 @@ PUT _template/twitter_tweets_dev_template
                     }
                 }
             },
-            "possibly_sensitive": {
-                "type": "text",
-                "fields": {
-                    "keyword": {
-                        "type": "keyword"
-                    }
-                }
+            "sensitive": {
+                "type": "boolean"
             },
-            "tweet_place_id": {
-                "type": "text",
-                "fields": {
-                    "keyword": {
-                        "type": "keyword"
-                    }
-                }
-            },
-            "tweet_place_url": {
-                "type": "text",
-                "fields": {
-                    "keyword": {
-                        "type": "keyword"
-                    }
-                }
-            },
-            "tweet_place_type": {
-                "type": "text",
-                "fields": {
-                    "keyword": {
-                        "type": "keyword"
-                    }
-                }
-            },
-            "tweet_place_short_name": {
-                "type": "text",
-                "fields": {
-                    "keyword": {
-                        "type": "keyword"
-                    }
-                }
-            },
-            "tweet_place_long_name": {
-                "type": "text",
-                "fields": {
-                    "keyword": {
-                        "type": "keyword"
-                    }
-                }
-            },
-            "tweet_place_country": {
-                "type": "text",
-                "fields": {
-                    "keyword": {
-                        "type": "keyword"
-                    }
-                }
-            },
-            "tweet_place_country_code": {
-                "type": "text",
-                "fields": {
-                    "keyword": {
-                        "type": "keyword"
-                    }
-                }
-            },
-            "tweet_creation_date_time": {
+            "created_at": {
                 "type": "date",
                 "format": "EEE MMM dd HH:mm:ss Z yyyy"
             },
-            "quote_count": {
-                "type": "integer"
+            "entities": {
+                "type": "nested"
             },
-            "reply_count": {
-                "type": "integer"
-            },
-            "retweet_count": {
-                "type": "integer"
-            },
-            "favorite_count": {
-                "type": "integer"
+            "metrics": {
+                "type": "nested",
+                "properties": {
+                    "quote_count": {
+                        "type": "integer"
+                    },
+                    "reply_count": {
+                        "type": "integer"
+                    },
+                    "retweet_count": {
+                        "type": "integer"
+                    },
+                    "favorites_count": {
+                        "type": "integer"
+                    }
+                }
             }
         }
     }

@@ -1,0 +1,27 @@
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "retweeted_status":{
+        "user": {
+          "id": "id",
+          "name": "profile_name",
+          "screen_name": "username",
+          "location": "location",
+          "url": "profile_url",
+          "description": "description",
+          "verified": "verified",
+          "created_at": "created_at",
+          "utc_offset": "utc_offset",
+          "time_zone": "time_zone",
+          "geo_enabled": "geo_enabled",
+          "followers_count": "metrics.followers_count",
+          "friends_count": "metrics.friends_count",
+          "listed_count": "metrics.listed_count",
+          "favourites_count": "metrics.favorites_count",
+          "statuses_count": "metrics.statuses_count"          
+        }
+      }
+    }
+  }
+]
